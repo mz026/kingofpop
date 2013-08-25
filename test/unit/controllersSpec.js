@@ -51,6 +51,23 @@ describe('AlbumsController', function(){
     expect(scope.currentAlbum).toBe(mockAlbumns[0]);
   });
   
+  it("$watch currentAlbum to trigger 'currentAlbumChanged' event", function(){
+    var album1 = {}
+      , album2 = {};
+
+    createController();
+    http.flush();
+    scope.currentAlbum = album1;
+    scope.$digest();
+
+    spyOn(scope, "$broadcast");
+    scope.currentAlbum = album2;
+    scope.$digest();
+
+    expect(scope.$broadcast).toHaveBeenCalledWith("currentAlbumChanged");
+  });
+  
+  
   describe("$scope.setCurrentAlbum(album)", function(){
     it("sets $scope.currentAlbum to album", function(){
       var album = {};
@@ -62,5 +79,7 @@ describe('AlbumsController', function(){
       expect(scope.currentAlbum).toBe(album);
     });
   });
+
+  
   
 });

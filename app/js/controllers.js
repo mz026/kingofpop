@@ -12,4 +12,8 @@ angular.module('myApp.controllers', []).
     $scope.setCurrentAlbum = function(album) {
       $scope.currentAlbum = album;
     };
+
+    $scope.$watch("currentAlbum", function() {
+      $scope.$broadcast("currentAlbumChanged");
+    });
   });
