@@ -25,7 +25,7 @@
     <div class="album-details" fade-in-after-image-loaded>
       <h3 class="album-title">{{ currentAlbum.name }}</h3>
       <div class="album-content">
-        <img class="album-cover" ng-src="{{currentAlbum && currentAlbum.cover_url}}" alt="" />
+        <img class="album-cover" ng-src="{{ '/assets/images/' + currentAlbum.name + '.jpg' }}" alt="" />
         <p class="album-review">{{ currentAlbum.review }}</p>
       </div>
     </div>
