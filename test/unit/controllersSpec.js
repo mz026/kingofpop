@@ -4,7 +4,7 @@
 
 describe('AlbumsController', function(){
   var http, scope, controller;
-  var mockAlbumns = []
+  var mockAlbumns = [{}, {}]
     , albumUrl = "/assets/jsons/albums.json";
 
   beforeEach(module('myApp.controllers'));
@@ -43,8 +43,24 @@ describe('AlbumsController', function(){
 
     expect(scope.albums).toEqual(mockAlbumns);
   });
+
+  it("sets $scope.currentAlbum to the first album returnd by server", function(){
+    createController();
+    http.flush();
+
+    expect(scope.currentAlbum).toBe(mockAlbumns[0]);
+  });
   
-  
-  
+  describe("$scope.setCurrentAlbum(album)", function(){
+    it("sets $scope.currentAlbum to album", function(){
+      var album = {};
+      createController();
+      http.flush();
+
+      scope.setCurrentAlbum(album);
+
+      expect(scope.currentAlbum).toBe(album);
+    });
+  });
   
 });
