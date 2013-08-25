@@ -6,5 +6,6 @@
     "test/lib/angular/angular-mocks.js",
     "app/js/**/*.js",
     "test/unit/**/*.js"
-  ]
+  ],
+  "launch_in_dev": [ "PhantomJS" ]
 }
