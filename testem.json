@@ -7,5 +7,6 @@
     "app/js/**/*.js",
     "test/unit/**/*.js"
   ],
-  "launch_in_dev": [ "PhantomJS" ]
+  "launch_in_dev": [ "PhantomJS" ],
+  "launch_in_ci": ["PhantomJS"]
 }
