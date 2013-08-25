@@ -4,6 +4,10 @@
   <meta charset="utf-8">
   <title>My AngularJS App</title>
   <link rel="stylesheet" href="css/app.css"/>
+  <script type="text/javascript" src="/bower_components/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/bower_components/eventEmitter/EventEmitter.js"></script>
+  <script type="text/javascript" src="/bower_components/eventie/eventie.js"></script>
+  <script type="text/javascript" src="/bower_components/imagesloaded/imagesloaded.js"></script>
 </head>
 <body>
 
@@ -15,7 +19,7 @@
       </div>
     </div>
 
-    <div class="album-details">
+    <div class="album-details" fade-in-after-image-loaded>
       <h3 class="album-title">{{ currentAlbum.name }}</h3>
       <div class="album-content">
         <img class="album-cover" ng-src="{{currentAlbum && currentAlbum.cover_url}}" alt="" />
