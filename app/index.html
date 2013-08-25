@@ -6,7 +6,25 @@
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-  <div ng-view></div>
+
+  <h2 class="header">The King Of Pop: Michael Jackson</h2>
+  <div ng-controller="AlbumsController" class="container">
+    <div class="album-list">
+      <div class="album-item" ng-repeat="album in albums">
+        <p ng-click="setCurrentAlbum(album)">{{album.name}}</p>
+      </div>
+    </div>
+
+    <div class="album-details">
+      <h3 class="album-title">{{ currentAlbum.name }}</h3>
+      <div class="album-content">
+        <img class="album-cover" ng-src="{{currentAlbum && currentAlbum.cover_url}}" alt="" />
+        <p class="album-review">{{ currentAlbum.review }}</p>
+      </div>
+    </div>
+
+  </div>
+
 
 
   <!-- In production use:
