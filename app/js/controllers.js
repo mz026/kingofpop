@@ -16,4 +16,8 @@ angular.module('myApp.controllers', []).
     $scope.$watch("currentAlbum", function() {
       $scope.$broadcast("currentAlbumChanged");
     });
+
+    $scope.isCurrent = function(album) {
+      return album === $scope.currentAlbum;
+    };
   });

@@ -66,8 +66,7 @@ describe('AlbumsController', function(){
 
     expect(scope.$broadcast).toHaveBeenCalledWith("currentAlbumChanged");
   });
-  
-  
+
   describe("$scope.setCurrentAlbum(album)", function(){
     it("sets $scope.currentAlbum to album", function(){
       var album = {};
@@ -79,6 +78,23 @@ describe('AlbumsController', function(){
       expect(scope.currentAlbum).toBe(album);
     });
   });
+
+  describe("$scope.isCurrent(album)", function(){
+    it("determines if album === $scope.currentAlbum", function(){
+      var album = {}
+        , anotherAlbum = {};
+
+      createController();
+      http.flush();
+      scope.setCurrentAlbum(album);
+
+      expect(scope.isCurrent(album)).toBe(true);
+      expect(scope.isCurrent(anotherAlbum)).toBe(false);
+    });
+    
+      
+  });
+  
 
   
   

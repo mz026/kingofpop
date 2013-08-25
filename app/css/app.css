@@ -34,3 +34,6 @@ body {
 .album-item {
   cursor: pointer;
 }
+.album-item.current span {
+  border-bottom: gray solid 3px;
+}

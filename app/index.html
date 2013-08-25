@@ -14,8 +14,11 @@
   <h2 class="header">The King Of Pop: Michael Jackson</h2>
   <div ng-controller="AlbumsController" class="container">
     <div class="album-list">
-      <div class="album-item" ng-repeat="album in albums">
-        <p ng-click="setCurrentAlbum(album)">{{album.name}}</p>
+      <div 
+        class="album-item" 
+        ng-class="{ current: isCurrent(album) }"
+        ng-repeat="album in albums" >
+        <p ng-click="setCurrentAlbum(album)"><span>{{album.name}}</span></p>
       </div>
     </div>
 
