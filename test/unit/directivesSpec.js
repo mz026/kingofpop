@@ -2,7 +2,7 @@
 
 /* jasmine specs for directives go here */
 
-describe('directives', function() {
+describe('fade-in-after-image-loaded directive', function() {
   var mock$, mockElement, tag, scope;
 
   beforeEach(module('myApp.directives'));

@@ -51,7 +51,7 @@ describe('AlbumsController', function(){
     expect(scope.currentAlbum).toBe(mockAlbumns[0]);
   });
   
-  it("$watch currentAlbum to trigger 'currentAlbumChanged' event", function(){
+  it("$watch $scope.currentAlbum to $broadcast 'currentAlbumChanged' event", function(){
     var album1 = {}
       , album2 = {};
 
@@ -68,7 +68,7 @@ describe('AlbumsController', function(){
   });
 
   describe("$scope.setCurrentAlbum(album)", function(){
-    it("sets $scope.currentAlbum to album", function(){
+    it("assigns album to $scope.currentAlbum", function(){
       var album = {};
       createController();
       http.flush();
